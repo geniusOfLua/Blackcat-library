@@ -18,7 +18,7 @@ function _G.Main:CreateWindow(title)
 	local uiDrag = Instance.new("UIDragDetector")
 
 	--Properties:
-	
+
 	ScreenGui.Name = "Window"
 	ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 	ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
@@ -49,6 +49,7 @@ function _G.Main:CreateWindow(title)
 	Title.TextScaled = true
 	Title.TextSize = 14.000
 	Title.TextWrapped = true
+	Title.Draggable = false
 
 	UICorner_2.Parent = Title
 
@@ -131,7 +132,7 @@ function _G.Main:Notification(title, description, duration)
 	local endPos = UDim2.new(0.753, 0, 0.8, 0)
 
 	--Properties:
-	
+
 	ScreenGui.Name = "Notification"
 	ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 	ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
@@ -176,7 +177,7 @@ function _G.Main:Notification(title, description, duration)
 	Description.TextWrapped = true
 
 	UICorner_3.Parent = Description
-	
+
 	wait(duration)
 	Frame:TweenPosition(startPos, Enum.EasingDirection.Out, Enum.EasingStyle.Quad, 1)
 	wait(1)
