@@ -1,0 +1,182 @@
+_G.Main = {}
+
+local keybind = Enum.KeyCode.K
+local enabled = true
+local uis = game:GetService("UserInputService")
+
+function _G.Main:CreateWindow(title)
+	-- Instances:
+
+	local ScreenGui = Instance.new("ScreenGui")
+	local Main = Instance.new("Frame")
+	local UICorner = Instance.new("UICorner")
+	local Title = Instance.new("TextLabel")
+	local UICorner_2 = Instance.new("UICorner")
+	local Frame = Instance.new("ScrollingFrame")
+	local List = Instance.new("UIListLayout")
+	local UICorner_3 = Instance.new("UICorner")
+
+	--Properties:
+	
+	ScreenGui.Name = "Window"
+	ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+	ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+	Main.Name = "Main"
+	Main.Parent = ScreenGui
+	Main.BackgroundColor3 = Color3.fromRGB(49, 49, 49)
+	Main.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	Main.BorderSizePixel = 0
+	Main.Position = UDim2.new(0.320817471, -14, 0.222841218, 13)
+	Main.Size = UDim2.new(0, 480, 0, 291)
+
+	UICorner.Parent = Main
+
+	Title.Name = "Title"
+	Title.Parent = Main
+	Title.BackgroundColor3 = Color3.fromRGB(71, 71, 71)
+	Title.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	Title.BorderSizePixel = 0
+	Title.Position = UDim2.new(0.291666657, 0, -0.171821311, 0)
+	Title.Size = UDim2.new(0, 200, 0, 50)
+	Title.Font = Enum.Font.SourceSans
+	Title.Text = title
+	Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+	Title.TextScaled = true
+	Title.TextSize = 14.000
+	Title.TextWrapped = true
+
+	UICorner_2.Parent = Title
+
+	Frame.Name = "Frame"
+	Frame.Parent = Main
+	Frame.Active = true
+	Frame.BackgroundColor3 = Color3.fromRGB(91, 91, 91)
+	Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	Frame.BorderSizePixel = 0
+	Frame.Position = UDim2.new(0.0250000004, 0, 0.0412371121, 0)
+	Frame.Size = UDim2.new(0, 458, 0, 268)
+	Frame.CanvasSize = UDim2.new(0, 0, 6, 0)
+	Frame.HorizontalScrollBarInset = Enum.ScrollBarInset.ScrollBar
+
+	List.Name = "List"
+	List.Parent = Frame
+	List.SortOrder = Enum.SortOrder.LayoutOrder
+
+	UICorner_3.Parent = Frame
+
+	-- Scripts:
+
+	local function GRVRE_fake_script() -- Main.LocalScript 
+		local script = Instance.new('LocalScript', Main)
+
+		script.Parent.Active = true
+		script.Parent.Draggable = true
+	end
+	coroutine.wrap(GRVRE_fake_script)()
+
+
+	-- Scripts:
+
+	uis.InputBegan:Connect(function(key)
+		if key.KeyCode == keybind then
+			enabled = not enabled
+			ScreenGui.Enabled = enabled
+		end
+	end)
+end
+
+function _G.Main:CreateButton(text, call)
+	-- Instances:
+
+	local Button = Instance.new("TextButton")
+	local UICorner_4 = Instance.new("UICorner")
+
+	Button.Name = "Button"
+	Button.Parent = game.Players.LocalPlayer.PlayerGui:WaitForChild("Window"):WaitForChild("Main"):WaitForChild("Frame")
+	Button.BackgroundColor3 = Color3.fromRGB(129, 129, 129)
+	Button.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	Button.BorderSizePixel = 0
+	Button.Position = UDim2.new(0.0220264308, 0, 0.0375939831, 0)
+	Button.Size = UDim2.new(0, 200, 0, 50)
+	Button.Font = Enum.Font.SourceSans
+	Button.Text = text
+	Button.TextColor3 = Color3.fromRGB(255, 255, 255)
+	Button.TextScaled = true
+	Button.TextWrapped = true
+
+	UICorner_4.CornerRadius = UDim.new(0, 14)
+	UICorner_4.Parent = Button
+
+	Button.MouseButton1Click:Connect(function()
+		pcall(call)
+	end)
+end
+
+function _G.Main:Notification(title, description, duration)
+	-- Instances:
+
+	local ScreenGui = Instance.new("ScreenGui")
+	local Frame = Instance.new("Frame")
+	local UICorner = Instance.new("UICorner")
+	local Title = Instance.new("TextLabel")
+	local UICorner_2 = Instance.new("UICorner")
+	local Description = Instance.new("TextLabel")
+	local UICorner_3 = Instance.new("UICorner")
+	local startPos = UDim2.new(0.992, 0,0.8, 0)
+	local endPos = UDim2.new(0.753, 0, 0.8, 0)
+
+	--Properties:
+	
+	ScreenGui.Name = "Notification"
+	ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+	ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+	Frame.Parent = ScreenGui
+	Frame.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+	Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	Frame.BorderSizePixel = 0
+	Frame.Position = startPos
+	Frame:TweenPosition(endPos, Enum.EasingDirection.Out, Enum.EasingStyle.Quad, 1)
+	Frame.Size = UDim2.new(0, 303, 0, 104)
+
+	UICorner.CornerRadius = UDim.new(0, 17)
+	UICorner.Parent = Frame
+
+	Title.Name = "Title"
+	Title.Parent = Frame
+	Title.BackgroundColor3 = Color3.fromRGB(77, 77, 77)
+	Title.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	Title.BorderSizePixel = 0
+	Title.Position = UDim2.new(0.138613865, 0, 0.105769232, 0)
+	Title.Size = UDim2.new(0, 219, 0, 30)
+	Title.Font = Enum.Font.SourceSans
+	Title.Text = title
+	Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+	Title.TextScaled = true
+	Title.TextWrapped = true
+
+	UICorner_2.Parent = Title
+
+	Description.Name = "Description"
+	Description.Parent = Frame
+	Description.BackgroundColor3 = Color3.fromRGB(77, 77, 77)
+	Description.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	Description.BorderSizePixel = 0
+	Description.Position = UDim2.new(0.0462046191, 0, 0.509615362, 0)
+	Description.Size = UDim2.new(0, 264, 0, 45)
+	Description.Font = Enum.Font.SourceSans
+	Description.Text = description
+	Description.TextColor3 = Color3.fromRGB(255, 255, 255)
+	Description.TextSize = 12
+	Description.TextWrapped = true
+
+	UICorner_3.Parent = Description
+	
+	wait(duration)
+	Frame:TweenPosition(startPos, Enum.EasingDirection.Out, Enum.EasingStyle.Quad, 1)
+	wait(1)
+	ScreenGui:Destroy()
+end
+
+return _G.Main
