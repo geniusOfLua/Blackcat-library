@@ -286,7 +286,7 @@ function _G.Main:CreateToggle(text)
 	--Properties:
 
 	ForSlider.Name = "ForSlider"
-	ForSlider.Parent = game.Players.LocalPlayer.PlayerGui:WaitForChild("Main"):WaitForChild("Frame")
+	ForSlider.Parent = game.Players.LocalPlayer.PlayerGui:WaitForChild("Window"):WaitForChild("Main"):WaitForChild("Frame")
 	ForSlider.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 	ForSlider.BackgroundTransparency = 1.000
 	ForSlider.BorderColor3 = Color3.fromRGB(0, 0, 0)
