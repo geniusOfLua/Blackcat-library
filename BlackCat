@@ -183,5 +183,8 @@ function _G.Main:Notification(title, description, duration)
 	wait(1)
 	ScreenGui:Destroy()
 end
-
+	
+	game.Players.LocalPlayer.PlayerGui:WaitForChild("Window"):Destroy()
+	game.Players.LocalPlayer.PlayerGui:WaitForChild("Notification"):Destroy()
+	
 return _G.Main
