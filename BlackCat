@@ -3,6 +3,92 @@ _G.Main = {}
 local keybind = Enum.KeyCode.K
 local enabled = true
 local uis = game:GetService("UserInputService")
+	-- Loading:
+	-- Instances:
+
+	local Loading = Instance.new("ScreenGui")
+	local Frame = Instance.new("Frame")
+	local UICorner = Instance.new("UICorner")
+	local TextBlack = Instance.new("TextLabel")
+	local TextCat = Instance.new("TextLabel")
+	local UICorner_2 = Instance.new("UICorner")
+	local LoadingText = Instance.new("TextLabel")
+	local UICorner_3 = Instance.new("UICorner")
+	local UIGradient = Instance.new("UIGradient")
+
+	--Properties:
+
+	Loading.Name = "Loading"
+	Loading.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+	Loading.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+	Frame.Parent = Loading
+	Frame.BackgroundColor3 = Color3.fromRGB(27, 27, 27)
+	Frame.BackgroundTransparency = 0.700
+	Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	Frame.BorderSizePixel = 0
+	Frame.Position = UDim2.new(0.31527248, 0, 0.412604451, 0)
+	Frame.Size = UDim2.new(0, 464, 0, 100)
+
+	UICorner.CornerRadius = UDim.new(0.300000012, -1)
+	UICorner.Parent = Frame
+
+	TextBlack.Name = "TextBlack"
+	TextBlack.Parent = Frame
+	TextBlack.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	TextBlack.BackgroundTransparency = 1.000
+	TextBlack.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	TextBlack.BorderSizePixel = 0
+	TextBlack.Size = UDim2.new(0, 232, 0, 100)
+	TextBlack.Font = Enum.Font.SourceSans
+	TextBlack.Text = "Black"
+	TextBlack.TextColor3 = Color3.fromRGB(0, 0, 0)
+	TextBlack.TextScaled = true
+	TextBlack.TextSize = 14.000
+	TextBlack.TextWrapped = true
+
+	TextCat.Name = "TextCat"
+	TextCat.Parent = Frame
+	TextCat.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	TextCat.BackgroundTransparency = 0.780
+	TextCat.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	TextCat.BorderSizePixel = 0
+	TextCat.Position = UDim2.new(0.5, 0, 0, 0)
+	TextCat.Size = UDim2.new(0, 232, 0, 100)
+	TextCat.Font = Enum.Font.SourceSans
+	TextCat.Text = "Cat"
+	TextCat.TextColor3 = Color3.fromRGB(255, 255, 255)
+	TextCat.TextScaled = true
+	TextCat.TextSize = 14.000
+	TextCat.TextWrapped = true
+
+	UICorner_2.CornerRadius = UDim.new(0.300000012, -1)
+	UICorner_2.Parent = TextCat
+
+	LoadingText.Name = "LoadingText"
+	LoadingText.Parent = Frame
+	LoadingText.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	LoadingText.BackgroundTransparency = 0.600
+	LoadingText.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	LoadingText.BorderSizePixel = 0
+	LoadingText.Position = UDim2.new(0.286637932, 0, -0.5, 0)
+	LoadingText.Size = UDim2.new(0, 200, 0, 50)
+	LoadingText.Font = Enum.Font.SourceSans
+	LoadingText.Text = "Loading"
+	LoadingText.TextColor3 = Color3.fromRGB(0, 0, 0)
+	LoadingText.TextScaled = true
+	LoadingText.TextSize = 14.000
+	LoadingText.TextWrapped = true
+
+	UICorner_3.CornerRadius = UDim.new(0.300000012, 0)
+	UICorner_3.Parent = LoadingText
+
+	UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(0, 0, 0)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(0, 0, 0)), ColorSequenceKeypoint.new(0.51, Color3.fromRGB(0, 0, 0)), ColorSequenceKeypoint.new(0.53, Color3.fromRGB(255, 255, 255)), ColorSequenceKeypoint.new(0.56, Color3.fromRGB(255, 255, 255)), ColorSequenceKeypoint.new(0.71, Color3.fromRGB(255, 255, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 255, 255))}
+	UIGradient.Parent = LoadingText
+	
+	wait(4)
+	
+	Loading:Destroy()
 
 function _G.Main:CreateWindow(title)
 	-- Instances:
