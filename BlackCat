@@ -1,6 +1,5 @@
 _G.Main = {}
 
-local enabledToggle = false
 local keybind = Enum.KeyCode.K
 local enabled = true
 local uis = game:GetService("UserInputService")
@@ -283,6 +282,7 @@ function _G.Main:CreateToggle(text)
 	local UICorner_3 = Instance.new("UICorner")
 	local TextFrame = Instance.new("Frame")
 	local TextLabel = Instance.new("TextLabel")
+	local enabledToggle = false
 
 	--Properties:
 
