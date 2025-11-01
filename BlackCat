@@ -36,6 +36,7 @@ function _G.Main:CreateWindow(title)
 	uiDrag.Parent = Title
 
 	Title.Name = "Title"
+	Title.Draggable = true
 	Title.Parent = Main
 	Title.BackgroundColor3 = Color3.fromRGB(71, 71, 71)
 	Title.BorderColor3 = Color3.fromRGB(0, 0, 0)
