@@ -15,6 +15,7 @@ function _G.Main:CreateWindow(title)
 	local Frame = Instance.new("ScrollingFrame")
 	local List = Instance.new("UIListLayout")
 	local UICorner_3 = Instance.new("UICorner")
+	local uiDrag = Instance.new("UIDragDetector")
 
 	--Properties:
 	
@@ -31,6 +32,8 @@ function _G.Main:CreateWindow(title)
 	Main.Size = UDim2.new(0, 480, 0, 291)
 
 	UICorner.Parent = Main
+
+	uiDrag.Parent = Title
 
 	Title.Name = "Title"
 	Title.Parent = Main
